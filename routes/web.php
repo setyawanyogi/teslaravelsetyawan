@@ -19,4 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=> ['can:isAdmin']],function(){
+	Route::get('/home', 'HomeController@index');
+	Route::get('kategori', 'CategoryController@index')->name('daftarkategori');
+
+});
+//Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
+
+
+//Route::get('/home', 'HomeController@index')->middleware('can:isUser')->name('home');
+
