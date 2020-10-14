@@ -12,27 +12,12 @@
         <script src="{{ asset('assets/dist/js/all.min.js') }}"></script>
     </head>
     <body class="sb-nav-fixed">
+        @include('sweetalert::alert')
+
         @include('layouts.admin.navbar')
         <div id="layoutSidenav">
             @include('layouts.admin.sidebar')
             <div id="layoutSidenav_content">
-                <div class="card mt-3 ml-3 mr-3">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold">Selamat Datang,</h6>
-                    </div>
-                    <div class="card-body">
-                        <p><b class="text-uppercase ">{{ Auth::user()->name }},</b>
-                        <br>Kamu login sebagai seorang 
-                        @can('isAdmin')
-                        <span class="btn btn-success">Admin</span>
-                        @else
-                        <span class="btn btn-success">User</span>
-                        @endcan
-                    </p>
-
-                        
-                  </div>
-              </div>
                 @yield('content')
                 @include('layouts.admin.footer')
             </div>

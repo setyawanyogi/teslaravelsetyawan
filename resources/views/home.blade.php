@@ -1,23 +1,19 @@
-@extends('layouts.app')
+@extends('dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+<div class="card mt-3 ml-3 mr-3">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold">Selamat Datang,</h6>
+    </div>
+    <div class="card-body">
+        <p><b class="text-uppercase ">{{ Auth::user()->name }},</b>
+            <br>Kamu login sebagai seorang 
+            @can('isAdmin')
+            <span class="btn btn-success">Admin</span>
+            @else
+            <span class="btn btn-success">User</span>
+            @endcan
+        </p>
     </div>
 </div>
 @endsection

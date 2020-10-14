@@ -20,8 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=> ['can:isAdmin']],function(){
-	Route::get('/home', 'HomeController@index')->name('dashboard');
+	Route::get('home', 'HomeController@index')->name('dashboard');
 	Route::get('kategori', 'CategoryController@index')->name('daftarkategori');
+	Route::get('kategori/tambah', 'CategoryController@create')->name('tambahkategori');
+	Route::post('kategori/store', 'CategoryController@store');
+	Route::get('kategori/edit/{id}', 'CategoryController@edit');
+	Route::put('/kategori/update/{id}', 'CategoryController@update');
+	Route::get('/kategori/delete/{id}', 'CategoryController@delete');
 
 });
 //Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
