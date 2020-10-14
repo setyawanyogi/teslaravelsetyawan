@@ -12,47 +12,28 @@
         <script src="{{ asset('assets/dist/js/all.min.js') }}"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">SiPERPUS</a>
-            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i>{{ Auth::user()->name }}
-                        @can('isAdmin')
-                            <span class="btn btn-success">Admin</span>
-                        @else
-                            <span class="btn btn-success">User</span>
-                        @endcan
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        @include('layouts.admin.navbar')
         <div id="layoutSidenav">
             @include('layouts.admin.sidebar')
             <div id="layoutSidenav_content">
-               @yield('content')
+                <div class="card mt-3 ml-3 mr-3">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold">Selamat Datang,</h6>
+                    </div>
+                    <div class="card-body">
+                        <p><b class="text-uppercase ">{{ Auth::user()->name }},</b>
+                        <br>Kamu login sebagai seorang 
+                        @can('isAdmin')
+                        <span class="btn btn-success">Admin</span>
+                        @else
+                        <span class="btn btn-success">User</span>
+                        @endcan
+                    </p>
+
+                        
+                  </div>
+              </div>
+                @yield('content')
                 @include('layouts.admin.footer')
             </div>
         </div>

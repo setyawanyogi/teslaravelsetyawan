@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=> ['can:isAdmin']],function(){
-	Route::get('/home', 'HomeController@index');
+	Route::get('/home', 'HomeController@index')->name('dashboard');
 	Route::get('kategori', 'CategoryController@index')->name('daftarkategori');
 
 });
