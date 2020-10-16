@@ -17,7 +17,7 @@
     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
      <nav class="sb-sidenav-menu-nested nav">
       <a class="nav-link" href="{{ route('daftarkategori') }}">Kategori</a>
-      <a class="nav-link" href="#">Buku</a>
+      <a class="nav-link" href="{{ route('daftarbuku') }}">Buku</a>
      </nav>
     </div>
 
