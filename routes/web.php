@@ -30,6 +30,12 @@ Route::group(['middleware'=> ['can:isAdmin']],function(){
 	Route::get('/kategori/delete/{id}', 'CategoryController@delete');
 	//CRUD books
 	Route::get('buku', 'BooksController@index')->name('daftarbuku');
+	Route::get('buku/tambah', 'BooksController@create')->name('tambahbuku');
+	Route::post('/buku/store', 'BooksController@store');
+	Route::get('/buku/edit/{id}', 'BooksController@edit');
+	Route::put('/buku/update/{id}', 'BooksController@update');
+	Route::get('/buku/delete/{id}', 'BooksController@delete');
+
 });
 //Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
 
