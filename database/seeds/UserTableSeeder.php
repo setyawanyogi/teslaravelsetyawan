@@ -16,14 +16,18 @@ class UserTableSeeder extends Seeder
         	'name'=>'Nikolas Saputra',
         	'email'=>'admin@siperpus.com',
         	'password'=>bcrypt('12345678'),
-        	'role'=>'admin'
+            'phone'=>'081233334444',
+            'address'=>'Jl. Pattimura No.3',
+        	'role_id'=>'1'
         ]);
 
         User::create([
         	'name'=>'Dian Sastro',
         	'email'=>'user@siperpus.com',
         	'password'=>bcrypt('12345678'),
-        	'role'=>'user'
+            'phone'=>'081244445555',
+            'address'=>'Jl. Soekarno No.8',
+        	'role_id'=>'2'
         ]);
     }
 }

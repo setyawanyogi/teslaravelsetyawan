@@ -24,8 +24,8 @@
                                         @csrf
 
                                         <div class="form-group">
-                                            <label class="small mb-1" for="Email">{{ __('E-Mail Address') }}</label>
-                                            <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Enter email address" required autocomplete="email" autofocus/>
+                                            <label class="small mb-1" for="Email">Email</label>
+                                            <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan alamat email" required autocomplete="email" autofocus/>
 
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -35,8 +35,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <label class="small mb-1" for="password">{{ __('Password') }}</label>
-                                            <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Enter password" required autocomplete="current-password"/>
+                                        <label class="small mb-1" for="password">Password</label>
+                                            <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Masukkan password" required autocomplete="current-password"/>
 
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -48,17 +48,13 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
                                                 <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" {{ old('remember') ? 'checked' : '' }}/>
-                                                <label class="custom-control-label" for="remember"> {{ __('Remember Me') }}</label>
+                                                <label class="custom-control-label" for="remember">Ingat saya?</label>
                                             </div>
                                         </div>
 
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-
-                                            @if (Route::has('password.request'))
-                                            <a class="small" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-                                            @endif
                                             
-                                            <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                                            <button type="submit" class="btn btn-primary">Login</button>
                                         </div>
                                     </form>
                                 </div>

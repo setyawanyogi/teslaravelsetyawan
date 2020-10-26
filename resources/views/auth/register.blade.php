@@ -25,7 +25,7 @@
 
                                             
                                             <div class="form-group">
-                                                <label class="small mb-1" for="name">{{ __('Name') }}</label>
+                                                <label class="small mb-1" for="name">Nama</label>
                                                 <input class="form-control @error('name') is-invalid @enderror py-4" id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required autocomplete="name" autofocus/>
 
 
@@ -39,7 +39,7 @@
 
 
                                             <div class="form-group">
-                                                <label class="small mb-1" for="email">{{ __('E-Mail Address') }}</label>
+                                                <label class="small mb-1" for="email">Email</label>
 
                                                 <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan alamat e-mail" required autocomplete="email"/>
 
@@ -54,7 +54,7 @@
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="small mb-1" for="password">{{ __('Password') }}</label>
+                                                        <label class="small mb-1" for="password">Password</label>
                                                         <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Masukkan password" required autocomplete="new-password"/>
 
 
@@ -69,7 +69,7 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="small mb-1" for="password-confirm">{{ __('Confirm Password') }}</label>
+                                                        <label class="small mb-1" for="password-confirm">Konfirmasi Password</label>
                                                         <input class="form-control py-4" id="password-confirm" name="password_confirmation" type="password" placeholder="Konfirmasi password" required autocomplete="new-password" />
 
                                                         
@@ -78,7 +78,7 @@
                                             </div>
 
                                             <div class="form-group mt-4 mb-0">
-                                                <button class="btn btn-primary btn-block" type="submit">{{ __('Register') }}</button>
+                                                <button class="btn btn-primary btn-block" type="submit">Daftar</button>
                                             </div>
                                         </form>
                                     </div>

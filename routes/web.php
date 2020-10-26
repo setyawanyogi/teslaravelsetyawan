@@ -35,7 +35,10 @@ Route::group(['middleware'=> ['can:isAdmin']],function(){
 	Route::get('/buku/edit/{id}', 'BooksController@edit');
 	Route::put('/buku/update/{id}', 'BooksController@update');
 	Route::get('/buku/delete/{id}', 'BooksController@delete');
-
+	//CRUD member
+	Route::get('member', 'UserController@index')->name('daftarmember');
+	Route::get('/member/edit/{id}', 'UserController@edit');
+	Route::put('/member/update/{id}', 'UserController@update');
 });
 //Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
 
