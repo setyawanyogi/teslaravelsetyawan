@@ -12,7 +12,7 @@
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
+            <div id="layoutAuthentication_content" class="mb-3">
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
@@ -44,6 +44,30 @@
                                                 <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan alamat e-mail" required autocomplete="email"/>
 
                                                 @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+
+                                        
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="phone">No. Telpon</label>
+                                                <input class="form-control @error('phone') is-invalid @enderror py-4" id="phone" name="phone" type="text" placeholder="Masukkan nomor telpon"/>
+
+
+                                                @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="address">Alamat</label>
+                                                <textarea class="form-control @error('address') is-invalid @enderror py-4" id="address" name="address" type="password" placeholder="Masukkan alamat" cols="30"></textarea>
+
+                                                @error('address')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

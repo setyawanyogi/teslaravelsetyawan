@@ -39,9 +39,19 @@ Route::group(['middleware'=> ['can:isAdmin']],function(){
 	Route::get('member', 'UserController@index')->name('daftarmember');
 	Route::get('/member/edit/{id}', 'UserController@edit');
 	Route::put('/member/update/{id}', 'UserController@update');
+	//CRUD pinjam
+	Route::get('pinjam', 'BorrowController@pinjamindex')->name('daftarpinjam');
+
+
+
+	//CRUD pengembalian
+	Route::get('pengembalian', 'BorrowController@pengembalianindex')->name('daftarpengembalian');
 });
 //Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
 
 
-//Route::get('/home', 'HomeController@index')->middleware('can:isUser')->name('home');
+Route::group(['middleware'=> ['can:isUser']],function(){
+	Route::get('home', 'HomeController@index')->name('dashboard');
+
+});
 

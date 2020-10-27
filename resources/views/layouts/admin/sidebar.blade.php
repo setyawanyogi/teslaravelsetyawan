@@ -8,6 +8,7 @@
      Dashboard
     </a>
 
+    @can('isAdmin')
     <div class="sb-sidenav-menu-heading">Master</div>
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
      <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -32,15 +33,29 @@
       <a class="nav-link" href="{{ route('daftarmember') }}">Member</a>
      </nav>
     </div>
+
+    
     <div class="sb-sidenav-menu-heading">Transaksi</div>
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="{{ route('daftarpinjam') }}">
      <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
      Peminjaman
     </a>
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="{{ route('daftarpengembalian') }}">
      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
      Pengembalian
     </a>
+    @endcan
+    
+    @can('isUser')
+    <a class="nav-link" href="{{ route('daftarpinjam') }}">
+       <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+       Profil
+    </a>
+    <a class="nav-link" href="{{ route('daftarpinjam') }}">
+       <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+       Peminjaman
+    </a>
+    @endcan
    </div>
   </div>
  </nav>

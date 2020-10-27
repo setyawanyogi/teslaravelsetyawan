@@ -31,9 +31,6 @@
                                 <a href="/member/edit/{{ $dm->id }}" class="btn btn-xs btn-warning">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="/buku/delete/{{ $dm->id }}" class="btn btn-xs btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
                             </td>
                         </tr>
                         @endforeach
