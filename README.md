@@ -11,6 +11,17 @@ SiPerpus adalah sistem informasi perpustakaan berbasis Laravel.
 5. Lakukan migrasi ```php artisan migrate:fresh --seed```
 6. Selesai. Jalankan dengan ```php artisan serve```
 
+## Pemakaian
+
+**Admin**
+username : admin@siperpus.com
+password : 12345678
+
+**User**
+username : user@siperpus.com
+password : 12345678
+
+
 ## Versi
 
 Versi : **0.0.1**
