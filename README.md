@@ -8,7 +8,8 @@ SiPerpus adalah sistem informasi perpustakaan berbasis Laravel.
 2. ```composer install```
 3. Copy .env ```cp .env.example .env```
 4. Generate key ```php artisan key:generate```
-5. Selesai. Jalankan dengan ```php artisan serve```
+5. Lakukan migrasi ```php artisan migrate:fresh --seed```
+6. Selesai. Jalankan dengan ```php artisan serve```
 
 ## Versi
 
