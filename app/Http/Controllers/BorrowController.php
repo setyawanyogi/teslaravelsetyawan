@@ -39,4 +39,31 @@ class BorrowController extends Controller
     	return view('pengembalianindex',['daftarborrow'=>$borrow]);
 
     }
+
+    public function pinjamcreate(){
+
+        $user = User::all();
+        $book = Book::all();
+        $status = Status::all();
+
+    	return view('peminjamancreate',['daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
+    }
+
+    public function pinjamstore(Request $request){
+        $this->validate($request,[
+            'member_id'=>'required',
+            'book_id'=>'required',
+            'status_id'=>'required',
+        ]);
+
+        $borrow = Borrow::create([
+            'member_id'=>$request->get('member_id'),
+            'book_id'=>$request->get('book_id'),
+            'status_id'=>$request->get('status_id'),
+        ]);
+        $borrow->save();
+
+        Alert::success('Data Berhasil Dimasukkan');
+        return redirect('pinjam');
+    }
 }

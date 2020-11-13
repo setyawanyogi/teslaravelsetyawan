@@ -25,7 +25,7 @@
 
                                         <div class="form-group">
                                             <label class="small mb-1" for="Email">Email</label>
-                                            <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan alamat email" required autocomplete="email" autofocus/>
+                                            <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="example@email.com" required autocomplete="email" autofocus/>
 
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
 
                                         <div class="form-group">
                                         <label class="small mb-1" for="password">Password</label>
-                                            <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Masukkan password" required autocomplete="current-password"/>
+                                            <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Password" required autocomplete="current-password"/>
 
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">

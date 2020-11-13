@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware'=> ['can:isAdmin']],function(){
+Route::group(['middleware'=> 'auth'],function(){
 	Route::get('home', 'HomeController@index')->name('dashboard');
 	//CRUD category
 	Route::get('kategori', 'CategoryController@index')->name('daftarkategori');
@@ -41,17 +41,13 @@ Route::group(['middleware'=> ['can:isAdmin']],function(){
 	Route::put('/member/update/{id}', 'UserController@update');
 	//CRUD pinjam
 	Route::get('pinjam', 'BorrowController@pinjamindex')->name('daftarpinjam');
-
-
+	Route::get('pinjam/tambah', 'BorrowController@pinjamcreate')->name('tambahpeminjaman');
+	Route::post('/pinjam/store', 'BorrowController@pinjamstore');
 
 	//CRUD pengembalian
 	Route::get('pengembalian', 'BorrowController@pengembalianindex')->name('daftarpengembalian');
 });
-//Route::get('/home', 'HomeController@index')->middleware('can:isAdmin')->name('home');
 
-
-Route::group(['middleware'=> ['can:isUser']],function(){
+Route::group(['middleware'=> 'auth'],function(){
 	Route::get('home', 'HomeController@index')->name('dashboard');
-
 });
-

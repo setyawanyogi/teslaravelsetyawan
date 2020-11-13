@@ -26,7 +26,7 @@
                                             
                                             <div class="form-group">
                                                 <label class="small mb-1" for="name">Nama</label>
-                                                <input class="form-control @error('name') is-invalid @enderror py-4" id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required autocomplete="name" autofocus/>
+                                                <input class="form-control @error('name') is-invalid @enderror py-4" id="name" type="text" name="name" value="{{ old('name') }}" placeholder="John Doe" required autocomplete="name" autofocus/>
 
 
                                                 @error('name')
@@ -41,7 +41,7 @@
                                             <div class="form-group">
                                                 <label class="small mb-1" for="email">Email</label>
 
-                                                <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Masukkan alamat e-mail" required autocomplete="email"/>
+                                                <input class="form-control @error('email') is-invalid @enderror py-4" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="example@email.com" required autocomplete="email"/>
 
                                                 @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
                                         
                                             <div class="form-group">
                                                 <label class="small mb-1" for="phone">No. Telpon</label>
-                                                <input class="form-control @error('phone') is-invalid @enderror py-4" id="phone" name="phone" type="text" placeholder="Masukkan nomor telpon"/>
+                                                <input class="form-control @error('phone') is-invalid @enderror py-4" id="phone" name="phone" type="text" placeholder="0812-XXXX-XXXX"/>
 
 
                                                 @error('phone')
@@ -65,7 +65,7 @@
 
                                             <div class="form-group">
                                                 <label class="small mb-1" for="address">Alamat</label>
-                                                <textarea class="form-control @error('address') is-invalid @enderror py-4" id="address" name="address" type="password" placeholder="Masukkan alamat" cols="30"></textarea>
+                                                <textarea class="form-control @error('address') is-invalid @enderror py-4" id="address" name="address" type="password" placeholder="Jl. Tanpa Nama No.XX" cols="30"></textarea>
 
                                                 @error('address')
                                                 <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="password">Password</label>
-                                                        <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Masukkan password" required autocomplete="new-password"/>
+                                                        <input class="form-control @error('password') is-invalid @enderror py-4" id="password" name="password" type="password" placeholder="Password" required autocomplete="new-password"/>
 
 
                                                         @error('password')

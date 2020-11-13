@@ -33,7 +33,6 @@
                                 <a href="/buku/delete/{{ $db->id }}" class="btn btn-xs btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
-
                             </td>
                         </tr>
                         @endforeach

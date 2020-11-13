@@ -6,6 +6,7 @@
         <h1 class="mt-4">Daftar Peminjaman</h1>
         <div class="row">
              <div class="card-body">
+                <a href="{{ route('tambahpeminjaman') }}" class="mb-2 btn btn-xs btn-primary">Tambah Peminjaman</a>
                 <table id="penulisDataTable" class="table table-bordered table-hover">
                     <thead>
                         <tr>
@@ -13,7 +14,6 @@
                             <th>Nama Member</th>
                             <th>Judul Buku</th>
                             <th>Status</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,15 +26,6 @@
                             <td>{{ $db->name }}</td>
                             <td>{{ $db->judul_buku }}</td>
                             <td>{{ $db->nama_status }}</td>
-                            <td>
-                                <a href="/buku/edit/{{ $db->id }}" class="btn btn-xs btn-warning">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="/buku/delete/{{ $db->id }}" class="btn btn-xs btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
