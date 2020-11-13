@@ -13,12 +13,12 @@ SiPerpus adalah sistem informasi perpustakaan berbasis Laravel.
 
 ## Pemakaian
 
-**Admin**
-username : admin@siperpus.com
+**Admin**<br/>
+username : admin@siperpus.com<br/>
 password : 12345678
 
-**User**
-username : user@siperpus.com
+**User**<br/>
+username : user@siperpus.com<br/>
 password : 12345678
 
 
