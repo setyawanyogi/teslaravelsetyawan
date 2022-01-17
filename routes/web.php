@@ -43,6 +43,9 @@ Route::group(['middleware'=> 'auth'],function(){
 	Route::get('pinjam', 'BorrowController@pinjamindex')->name('daftarpinjam');
 	Route::get('pinjam/tambah', 'BorrowController@pinjamcreate')->name('tambahpeminjaman');
 	Route::post('/pinjam/store', 'BorrowController@pinjamstore');
+	Route::get('/pinjam/edit/{id}', 'BorrowController@edit');
+	Route::put('/pinjam/update/{id}', 'BorrowController@update');
+	Route::get('/pinjam/delete/{id}', 'BorrowController@delete');
 
 	//CRUD pengembalian
 	Route::get('pengembalian', 'BorrowController@pengembalianindex')->name('daftarpengembalian');

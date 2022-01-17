@@ -44,9 +44,42 @@ class BorrowController extends Controller
 
         $user = User::all();
         $book = Book::all();
-        $status = Status::all();
 
     	return view('peminjamancreate',['daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
+    }
+
+    public function edit($id){
+    	$borrow = Borrow::find($id);
+        $user = User::all();
+        $book = Book::all();
+    	$status = Status::all();
+
+    	return view ('update',['daftarorrow'=> $borrow, 'daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
+
+    }
+
+    public function update(Request $request, $id){
+    	$this->validate($request,[
+    		'member_id'=>'required',
+            'book_id'=>'required',
+            'status_id'=>'required',
+    	]);
+
+    	$borrow = Borrow::find($id);
+    	$borrow->member_id = $request->member_id;
+    	$borrow->book_id = $request->book_id;
+    	$borrow->status_id = $request->status_id;
+    	$borrow->save();
+    	Alert::success('Data Berhasil Dimasukkan');
+    	return redirect('pinjam');
+
+    }
+
+    public function delete($id){
+    	$borrow = Borrow::find($id);
+    	$borrow->delete();
+    	Alert::success('Data Berhasil Dihapus');
+        return redirect('pinjam');
     }
 
     public function pinjamstore(Request $request){

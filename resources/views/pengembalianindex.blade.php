@@ -27,9 +27,7 @@
                             <td>{{ $db->judul_buku }}</td>
                             <td>{{ $db->nama_status }}</td>
                             <td>
-                                <a href="/buku/edit/{{ $db->id }}" class="btn btn-xs btn-warning">
-                                    <i class="fas fa-edit"></i>
-                                </a>
+                                
                                 <a href="/buku/delete/{{ $db->id }}" class="btn btn-xs btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>

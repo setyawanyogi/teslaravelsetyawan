@@ -1,4 +1,4 @@
-# SiPerpus (Sistem Informasi Perpustakaan)
+<!--# SiPerpus (Sistem Informasi Perpustakaan)
 
 SiPerpus adalah sistem informasi perpustakaan berbasis Laravel. 
 
@@ -34,4 +34,4 @@ Versi : **0.0.1**
 
 ## Lisensi
 
-Program ini menggunakan lisensi [MIT license](https://opensource.org/licenses/MIT).
+Program ini menggunakan lisensi [MIT license](https://opensource.org/licenses/MIT).-->

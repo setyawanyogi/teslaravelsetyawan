@@ -14,6 +14,7 @@
                             <th>Nama Member</th>
                             <th>Judul Buku</th>
                             <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,14 @@
                             <td>{{ $db->name }}</td>
                             <td>{{ $db->judul_buku }}</td>
                             <td>{{ $db->nama_status }}</td>
+                            <td>
+                                <a href="/pinjam/edit/{{ $no }}" class="btn btn-xs btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="/pinjam/delete/{{ $db->id }}" class="btn btn-xs btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
