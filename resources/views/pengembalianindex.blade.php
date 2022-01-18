@@ -17,18 +17,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                        $no = 1;
-                        @endphp
-                        @foreach($daftarborrow as $db)
+                        @foreach($daftarborrow as $dx)
                         <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $db->name }}</td>
-                            <td>{{ $db->judul_buku }}</td>
-                            <td>{{ $db->nama_status }}</td>
+                            <td>{{ $dx->id }}</td>
+                            <td>{{ $dx->user->name }}</td>
+                            <td>{{ $dx->book->judul_buku }}</td>
+                            <td>{{ $dx->status->nama_status }}</td>
                             <td>
                                 
-                                <a href="/buku/delete/{{ $db->id }}" class="btn btn-xs btn-danger">
+                                <a href="/pinjam/delete/{{ $dx->id }}" class="btn btn-xs btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>

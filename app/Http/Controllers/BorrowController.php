@@ -14,36 +14,42 @@ use Alert;
 class BorrowController extends Controller
 {
     public function pinjamindex(){
-
-    	$borrow = DB::table('borrows')
-    				->join('users','borrows.member_id','=','users.id')
-    				->join('books','borrows.book_id','=','books.id')
-    				->join('status','borrows.status_id','=','status.id')
-    				->select('borrows.*','books.*','users.*','status.*')
-    				->where('borrows.status_id','=','1')
-    				->get();
+		$borrow = Borrow::with('user', 'book','status')
+		->where('status_id', '=', '1')
+		->get();
     	return view('peminjamanindex',['daftarborrow'=>$borrow]);
-
     }
 
+	// $borrow = DB::table('borrows')
+    	// 			->join('users','borrows.member_id','=','users.id')
+    	// 			->join('books','borrows.book_id','=','books.id')
+    	// 			->join('status','borrows.status_id','=','status.id')
+    	// 			->select('borrows.*','books.*','users.*','status.*')
+    	// 			->where('borrows.status_id','=','1')
+    	// 			->get();
 
  	public function pengembalianindex(){
-
-    	$borrow = DB::table('borrows')
-    				->join('users','borrows.member_id','=','users.id')
-    				->join('books','borrows.book_id','=','books.id')
-    				->join('status','borrows.status_id','=','status.id')
-    				->select('borrows.*','books.*','users.*','status.*')
-    				->where('borrows.status_id','=','2')
-    				->get();
+		$borrow = Borrow::with('user', 'book','status')
+		->where('status_id', '=', '2')
+		->get();
     	return view('pengembalianindex',['daftarborrow'=>$borrow]);
-
     }
+
+    	//$borrow = DB::table('borrows')
+    	//			->join('users','borrows.member_id','=','users.id')
+    	//			->join('books','borrows.book_id','=','books.id')
+    	//			->join('status','borrows.status_id','=','status.id')
+    	//			->select('borrows.*','books.*','users.*','status.*')
+    	//			->where('borrows.status_id','=','2')
+    	//			->get();
+    	//return view('pengembalianindex',['daftarborrow'=>$borrow]);
+		//}
 
     public function pinjamcreate(){
 
         $user = User::all();
         $book = Book::all();
+		$status = Status::all();
 
     	return view('peminjamancreate',['daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
     }
@@ -54,7 +60,7 @@ class BorrowController extends Controller
         $book = Book::all();
     	$status = Status::all();
 
-    	return view ('update',['daftarorrow'=> $borrow, 'daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
+    	return view ('peminjamanupdate',['daftarborrow'=> $borrow, 'daftaruser'=>$user, 'daftarbuku'=>$book,'daftarstatus'=>$status]);
 
     }
 
@@ -93,6 +99,7 @@ class BorrowController extends Controller
             'member_id'=>$request->get('member_id'),
             'book_id'=>$request->get('book_id'),
             'status_id'=>$request->get('status_id'),
+
         ]);
         $borrow->save();
 

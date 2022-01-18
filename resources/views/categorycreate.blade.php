@@ -6,7 +6,7 @@
         <h1 class="mt-4">Tambah Kategori</h1>
         <div class="row">
              <div class="card-body">
-                <form action="kategori/store" method="POST">
+                <form action="/kategori/store" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label class="mb-1 small">Nama Kategori</label>

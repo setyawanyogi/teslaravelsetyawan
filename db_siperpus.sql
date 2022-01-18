@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2022 at 10:30 PM
+-- Generation Time: Jan 18, 2022 at 07:13 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -41,9 +41,18 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `kategori_id`, `judul_buku`, `nama_pengarang`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Membuat Aplikasi IoT:Internet of Things', 'Hardana & Radian', NULL, NULL),
-(2, 4, 'Guru Ideal di Era Digital', 'Erwin Widiasworo', NULL, NULL),
-(3, 3, 'Dasar-Dasar Hukum Pidana', 'Zuleha, S.H, M.H', NULL, NULL);
+(5, 6, 'Dilan 1990', 'Pidi Baiq', NULL, '2022-01-18 10:29:37'),
+(6, 6, 'Ketika Cinta Bertasbih', 'Habiburrahman El Shirazy', NULL, NULL),
+(7, 6, 'Filosofi Kopi, Petir, Supernova', 'Dee Lestari', NULL, NULL),
+(8, 6, 'Pergi, Bumi, Pulang', 'Tere Liye', NULL, NULL),
+(9, 7, 'A Beautiful Mind', 'Sylvia Nasar', NULL, NULL),
+(10, 7, 'Alexander Hamilton', 'Ron Chernow', NULL, NULL),
+(11, 7, 'Barracoon: The Story of the Last \"Black Cargo\"', 'Zora Neale Hurston', NULL, NULL),
+(12, 7, 'Churchill: A Life', 'Martin Gilbert', NULL, NULL),
+(13, 10, 'Akasha: Ito Junji - Best of Best Short Story Collection', 'Ito Junji', NULL, NULL),
+(14, 10, 'Demon Slayer: Kimetsu No Yaiba', 'Koyoharu Gotouge', NULL, NULL),
+(15, 10, 'Kungfu Boy Legends 27', 'Takeshi Maekawa', NULL, NULL),
+(16, 10, 'Detektif Conan', 'Aoyama Gosho', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -65,10 +74,8 @@ CREATE TABLE `borrows` (
 --
 
 INSERT INTO `borrows` (`id`, `member_id`, `book_id`, `status_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 3, 1, '2022-01-08 01:14:40', '2022-01-08 01:14:40'),
-(2, 2, 2, 1, '2022-01-08 01:14:41', '2022-01-08 01:14:41'),
-(3, 2, 1, 2, '2022-01-08 01:14:41', '2022-01-08 01:14:41'),
-(4, 1, 2, 1, '2022-01-17 12:59:29', '2022-01-17 12:59:29');
+(14, 1, 14, 1, '2022-01-18 10:43:52', '2022-01-18 10:43:52'),
+(15, 1, 13, 2, '2022-01-18 10:44:17', '2022-01-18 10:45:18');
 
 -- --------------------------------------------------------
 
@@ -88,8 +95,9 @@ CREATE TABLE `category_book` (
 --
 
 INSERT INTO `category_book` (`id`, `nama_kategori`, `created_at`, `updated_at`) VALUES
-(3, 'hukum', '2022-01-08 01:14:40', '2022-01-08 01:14:40'),
-(4, 'teknologi', '2022-01-08 01:14:40', '2022-01-08 01:14:40');
+(6, 'Novel', NULL, NULL),
+(7, 'Biografi', '2022-01-18 10:34:28', '2022-01-18 10:34:28'),
+(10, 'Komik', '2022-01-18 10:40:52', '2022-01-18 10:40:52');
 
 -- --------------------------------------------------------
 
@@ -213,8 +221,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `address`, `remember_token`, `created_at`, `updated_at`, `role_id`) VALUES
-(1, 'Nikolas Saputra', 'admin@siperpus.com', NULL, '$2y$10$9UTnPvYr3cCuRGUQdEI12.HJsRPWYffzdHYD1g6WgMGeFUEtiecuW', '081233334444', 'Jl. Pattimura No.3', NULL, '2022-01-08 01:14:40', '2022-01-08 01:14:40', 1),
-(2, 'Dian Sastro', 'user@siperpus.com', NULL, '$2y$10$VznSFd9UegIGLTUszxT64eM/S/8.sLXzg6lsw5f0YtFLL0JH.a5xe', '081244445555', 'Jl. Soekarno No.8', NULL, '2022-01-08 01:14:40', '2022-01-08 01:14:40', 2);
+(1, 'Moch Satrio', 'admin@siperpus.com', NULL, '$2y$10$9UTnPvYr3cCuRGUQdEI12.HJsRPWYffzdHYD1g6WgMGeFUEtiecuW', '081888888888', 'Jl. Sawojajar No.3', NULL, '2022-01-08 01:14:40', '2022-01-18 10:15:59', 1),
+(2, 'Dike Joran', 'user@siperpus.com', NULL, '$2y$10$VznSFd9UegIGLTUszxT64eM/S/8.sLXzg6lsw5f0YtFLL0JH.a5xe', '081000000000', 'Jl. Serayu No.99', NULL, '2022-01-08 01:14:40', '2022-01-18 10:16:39', 2),
+(3, 'Setyawan', 'setyawan@gmail.com', NULL, '$2y$10$4ZMQtNC1ylsxDoiqB66tHuM0Z2lTHN6yKh3lD/rqjz0Z7fiRvBdKG', '081212341234', 'Jl. Batu No.99', NULL, '2022-01-18 10:49:36', '2022-01-18 10:49:36', 2);
 
 --
 -- Indexes for dumped tables
@@ -288,19 +297,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `borrows`
 --
 ALTER TABLE `borrows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `category_book`
 --
 ALTER TABLE `category_book`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -330,7 +339,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

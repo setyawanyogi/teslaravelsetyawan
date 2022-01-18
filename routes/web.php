@@ -24,8 +24,8 @@ Route::group(['middleware'=> 'auth'],function(){
 	//CRUD category
 	Route::get('kategori', 'CategoryController@index')->name('daftarkategori');
 	Route::get('kategori/tambah', 'CategoryController@create')->name('tambahkategori');
-	Route::post('kategori/store', 'CategoryController@store');
-	Route::get('kategori/edit/{id}', 'CategoryController@edit');
+	Route::post('/kategori/store', 'CategoryController@store');
+	Route::get('/kategori/edit/{id}', 'CategoryController@edit');
 	Route::put('/kategori/update/{id}', 'CategoryController@update');
 	Route::get('/kategori/delete/{id}', 'CategoryController@delete');
 	//CRUD books
